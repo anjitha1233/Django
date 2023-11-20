@@ -1,0 +1,496 @@
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="TemplateMo">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <title>ANS BANK</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-finance-business.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+      <script>
+var subjectObject = {
+  "Kozhikode": {
+    "Town": ["Links", "Images", "Tables", "Lists"],
+    "Thamarassery": ["Borders", "Margins", "Backgrounds", "Float"],
+    "Civil": ["Variables", "Operators", "Functions", "Conditions"]
+  },
+  "Wayanad": {
+    "SBathery": ["Variables", "Strings", "Arrays"],
+    "Kalpetta": ["SELECT", "UPDATE", "DELETE"],
+    "Civil": ["Variables", "Operators", "Functions", "Conditions"]
+  },
+  "Kannur": {
+    "Town": ["Links", "Images", "Tables", "Lists"],
+    "Thalassery": ["Borders", "Margins", "Backgrounds", "Float"],
+    "Payyannur": ["Variables", "Operators", "Functions", "Conditions"]
+  },
+  "Malappuram": {
+    "Tirur": ["Links", "Images", "Tables", "Lists"],
+    "Tanur": ["Borders", "Margins", "Backgrounds", "Float"],
+    "Malappuram": ["Variables", "Operators", "Functions", "Conditions"],
+    "Edappal": ["Variables", "Operators", "Functions", "Conditions"]
+  },
+  "Ernakulam": {
+    "Edappalli": ["Links", "Images", "Tables", "Lists"],
+    "Kakkanad": ["Borders", "Margins", "Backgrounds", "Float"],
+    "Tripunithura": ["Variables", "Operators", "Functions", "Conditions"],
+    "Aluva": ["Variables", "Operators", "Functions", "Conditions"]
+  },
+   "Trivandrum": {
+    "Pattom": ["Links", "Images", "Tables", "Lists"],
+    "Kuravamkonam": ["Borders", "Margins", "Backgrounds", "Float"],
+    "Karyavattom": ["Variables", "Operators", "Functions", "Conditions"]
+  },
+}
+window.onload = function() {
+  var subjectSel = document.getElementById("subject");
+  var topicSel = document.getElementById("topic");
+
+  for (var x in subjectObject) {
+    subjectSel.options[subjectSel.options.length] = new Option(x, x);
+  }
+  subjectSel.onchange = function() {
+    //empty Chapters- and Topics- dropdowns
+  
+    topicSel.length = 1;
+    //display correct values
+    for (var y in subjectObject[this.value]) {
+      topicSel.options[topicSel.options.length] = new Option(y, y);
+    }
+  }
+  topicSel.onchange = function() {
+    //empty Chapters dropdown
+
+    //display correct values
+    var z = subjectObject[subjectSel.value][this.value];
+    for (var i = 0; i < z.length; i++) {
+      chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
+    }
+  }
+}
+          function fun() {
+alert("Application Accepted");
+
+}
+</script>
+
+  </head>
+
+  <body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+
+    <!-- Header -->
+    <div class="sub-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-xs-12">
+            <ul class="left-info">
+              <li><a href="#"><i class="fa fa-clock-o"></i>Mon-Fri 09:00-17:00</a></li>
+
+            </ul>
+          </div>
+          <div class="col-md-4">
+
+
+<!--<ul>-->
+    <ul class="right-icons" >
+                   <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+
+    <li><a href="credential/login" class="btn btn-success" role="button">Login</a></li>
+
+
+</ul>
+
+
+
+<!--            </ul>-->
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <header class="">
+      <div class="container-fluid bg-primary">
+            <div class="container">
+                <nav class="navbar navbar-dark navbar-expand-lg py-0">
+                    <a href="index.html" class="navbar-brand">
+                        <h1 class="text-white fw-bold d-block">ANS<span class="text-secondary">Bank</span> </h1>
+                    </a>
+                    <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse bg-transparent" id="navbarCollapse">
+                        <div class="navbar-nav ms-auto mx-xl-auto p-0">
+                            <a href="{% url 'bankapp:home' %}" class="nav-item nav-link ">Home</a>
+<!--                            <a href="about.html" class="nav-item nav-link">About</a>-->
+
+
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Branches</a>
+                                <div class="dropdown-menu rounded">
+                                    <a href="https://en.wikipedia.org/wiki/Kozhikode" class="dropdown-item">Kozhikode</a>
+                                    <a href="https://en.wikipedia.org/wiki/Wayanad_district" class="dropdown-item">Wayand</a>
+                                    <a href="https://en.wikipedia.org/wiki/Malappuram_district" class="dropdown-item">Malappuram</a>
+                                    <a href="https://en.wikipedia.org/wiki/Kannur" class="dropdown-item">Kannur</a>
+                                   <a href="https://en.wikipedia.org/wiki/Thiruvananthapuram" class="dropdown-item">Trivandrum</a>
+                                   <a href="https://en.wikipedia.org/wiki/Ernakulam" class="dropdown-item">Ernakulam</a>
+                                </div>
+                            </div>
+<!--                            <a href="contact.html" class="nav-item nav-link">Contact</a>-->
+                           <a href="credential/register" class="nav-item nav-link">Register</a>
+
+
+
+                        </div>
+                    </div>
+                    <div class="d-none d-xl-flex flex-shirink-0">
+                        <div id="phone-tada" class="d-flex align-items-center justify-content-center me-4">
+                            <a href="" class="position-relative animated tada infinite">
+                                <i class="fa fa-phone-alt text-white fa-2x"></i>
+                                <div class="position-absolute" style="top: -7px; left: 20px;">
+                                    <span><i class="fa fa-comment-dots text-secondary"></i></span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="d-flex flex-column pe-4 border-end">
+                            <span class="text-red-50">Have any questions?</span>
+                            <span class="text-secondary">Call: + 91 78399090 </span>
+                        </div>
+<!--                       <a href="#" class="btn btn-primary" role="button">Register</a>-->
+                        <div class="d-flex align-items-center justify-content-center ms-4 ">
+                            <a href="#"><i class="bi bi-search text-white fa-2x"></i> </a>
+                        </div>
+                    </div>
+                </nav>
+
+            </div>
+        </div>
+    </header>
+
+
+<!--    &lt;!&ndash; Page Content &ndash;&gt;-->
+<!--    <div class="page-heading header-text">-->
+<!--      <div class="container">-->
+<!--        <div class="row">-->
+<!--          <div class="col-md-12">-->
+<!--            <h1>Register</h1>-->
+<!--            <span>Be our family</span>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+
+
+    <div class="callback-form contact-us">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>Application  <em>form</em></h2>
+                <h6 style="color:lightblue"> Please provide the details  and our representative will contact you soon.</h6>
+            </div>
+          </div>
+          <div class="col-md-8">
+               <div class="contact-form">
+              <form id="contact footer-contact" action="submitform" method="POST" >
+                   {% csrf_token %}
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <fieldset>
+                         <input type="text" placeholder="Enter Fullname" name="name" required>
+<!--                      <input name="firstname" type="text" class="form-control" id="name" placeholder="Full Name" required="">-->
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-6">
+                    <fieldset>
+                      <input name="Date of Birth" type="date" class="form-control" id="DOB" placeholder="Date Of Birth" required="">
+                    </fieldset>
+                  </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                    <fieldset>
+                      <input name="Age" type="number" class="form-control" id="age" placeholder="Age" required="">
+                    </fieldset>
+                  </div>
+                     <div class="col-lg-6 col-md-6 col-sm-6">
+                    <fieldset>
+                       <div class="form-group">
+<label><h6>Gender:</h6></label>
+<label class="radio-inline"> <input type="radio"  name="gender">Female</label>
+<label class="radio-inline"><input type="radio" name="gender">Male</label></div>
+<!--                      <input name="Age" type="text" class="form-control" id="age" placeholder="Age" required="">-->
+                    </fieldset>
+                  </div>
+                     <div class="col-lg-6 col-md-6 col-sm-6">
+                    <fieldset>
+                      <input name="phone number" type="text" class="form-control" id="phone number" placeholder="Phone Number" required="">
+                    </fieldset>
+                  </div>
+
+
+
+
+                    <fieldset>
+                        <input type="email" placeholder="Enter mail ID" name="email" required><br>
+
+          <p>Address</p>
+          <input type="text" name="name" placeholder=" address"/>
+          <input type="text" name="name" placeholder="address lin2"/>
+<!--          <div class="city-item">-->
+            <input type="text" name="name" placeholder="city" />
+            <input type="text" name="name" placeholder="state" />
+            <input type="text" name="name" placeholder="Postal / Zip code" />
+<fieldset>
+
+
+<!--    <input name="email" type="email" class="form-control" id="mail id" placeholder="Email ID" required="">-->
+                    </fieldset>
+<!--          </div>-->
+</fieldset>
+
+
+
+                  <div class="row">
+                       <fieldset>
+                <div class="col-lg-12 col-md-12 col-sm-12">
+
+
+                  District:<select name="subject" id="subject">
+                    <option value="" selected="selected">Select District</option>
+                    </select>
+
+<!--     </div>-->
+<!--                   <div class="col-lg-6 col-md-6 col-sm-6">-->
+                  Branch: <select name="topic" id="topic">
+                 <option value="" selected="selected">Please select district first</option>
+                 </select>
+                  <br><br>
+                   </div>
+
+
+                            </fieldset>
+                  </div>
+                   <div class="col-lg-6 col-md-6 col-sm-6">
+                    <fieldset>
+                  <div class="form-group-inline" >
+                     <label><h6>Account Type:</h6></label>
+               <select class="form-control-inline" id="exampleFormControlSelect1">
+                             <option>Current</option>
+                             <option>Savings</option>
+
+                             </select>
+                             </div>
+                             </fieldset>
+                       </div>
+
+
+
+                       <fieldset>
+                         <h6>  Materials Provided:</h6><label class="checkbox-inline">
+      <input type="checkbox" value="">Cheque Book
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" value="">Debit Card
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" value="">Credit Card
+    </label>
+                           </fieldset>
+
+
+
+
+
+<!--            <div class="contact-form">-->
+<!--              <form id="contact" action="register" method="POST">-->
+<!--                   {% csrf_token %}-->
+<!--                <div class="row">-->
+<!--&lt;!&ndash;                  <div class="col-lg-4 col-md-12 col-sm-12">&ndash;&gt;-->
+<!--                    <fieldset>-->
+<!--&lt;!&ndash;                     <label for="username"><strong>username</strong></label>&ndash;&gt;-->
+<!--        <input type="text" placeholder="Enter Username" name="username" required><br>-->
+
+
+<!--&lt;!&ndash;        <label for="password"><strong>Password</strong></label>&ndash;&gt;-->
+<!--        <input type="password" placeholder="Enter Password" name="password" required><br>-->
+<!--&lt;!&ndash;            <label for="password1"><strong>Confirm Password</strong></label>&ndash;&gt;-->
+<!--        <input type="password" placeholder="Retype password" name="password1" required>-->
+<!--      </div>-->
+<!--      <button type="submit" class="filled-button"><strong>Submit </strong></button>-->
+
+<!--                    </fieldset>-->
+<!--                  </div>-->
+<!--                  <div class="col-lg-4 col-md-12 col-sm-12">-->
+<!--                    <fieldset>-->
+<!--                      <input name="Password" type="text" class="form-control" id="email" pattern="[^ @]*@[^ @]*" placeholder="Password" required="">-->
+<!--                    </fieldset>-->
+<!--                  </div>-->
+<!--                  <div class="col-lg-4 col-md-12 col-sm-12">-->
+<!--                    <fieldset>-->
+<!--                      <input name="confirm password" type="text" class="form-control" id="subject" placeholder="Retype Password" required="">-->
+<!--                    </fieldset>-->
+<!--                  </div>-->
+
+<!--                  </div>-->
+<!--                  <div class="col-lg-12">-->
+<!--                    <fieldset>-->
+
+<!--                    </fieldset>-->
+<!--                    <button >Click me</button>-->
+
+                     <button  type="submit" class="filled-button"> <strong>Submit </strong></button>
+<!--                      -->
+                     <button type="button" class="filled-button"><a href= "login"> <strong>Logout </strong></button></a>
+                  </div>
+                </div>
+            </div>
+          </div>
+              </form>
+
+            <div class="container" >
+             {% for msg in messages %}
+            {{msg}}<br>
+                Click to Return <a href="{% url 'bankapp:home' %}">Home</a>
+            {% endfor %}
+                </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Footer Starts Here -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 footer-item">
+            <h4>Finance Business</h4>
+            <p>Vivamus tellus mi. Nulla ne cursus elit,vulputate. Sed ne cursus augue hasellus lacinia sapien vitae.</p>
+            <ul class="social-icons">
+              <li><a rel="nofollow" href="https://fb.com/templatemo" target="_blank"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+
+            </ul>
+          </div>
+          <div class="col-md-3 footer-item">
+            <h4>Useful Links</h4>
+            <ul class="menu-list">
+              <li><a href="#">Vivamus ut tellus mi</a></li>
+              <li><a href="#">Nulla nec cursus elit</a></li>
+              <li><a href="#">Vulputate sed nec</a></li>
+              <li><a href="#">Cursus augue hasellus</a></li>
+              <li><a href="#">Lacinia ac sapien</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 footer-item">
+            <h4>Additional Pages</h4>
+            <ul class="menu-list">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">How We Work</a></li>
+              <li><a href="#">Quick Support</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 footer-item last-item">
+            <h4>Contact Us</h4>
+            <div class="contact-form">
+              <form id="contact footer-contact" action="" method="post">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <fieldset>
+                      <input name="name" type="text" class="form-control" id="name" placeholder="Full Name" required="">
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <fieldset>
+                      <input name="email" type="text" class="form-control" id="email" pattern="[^ @]*@[^ @]*" placeholder="E-Mail Address" required="">
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your Message" required=""></textarea>
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <button type="submit" id="form-submit" class="filled-button">Send Message</button>
+                    </fieldset>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="sub-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <p>Copyright &copy; 2020 Financial Business Co., Ltd.
+
+            - Design: <a rel="nofollow noopener" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Additional Scripts -->
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+    <script src="{% static 'assets/js/owl.js' %}"></script>
+    <script src="{% static 'assets/js/slick.js' %}"></script>
+    <script src="assets/js/accordions.js"></script>
+
+    <script src="{% static 'assets/js/popper.min.js' %}"></script>
+     <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+
+    <script language = "text/Javascript">
+      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+      function clearField(t){                   //declaring the array outside of the
+      if(! cleared[t.id]){                      // function makes it static and global
+          cleared[t.id] = 1;  // you could use true and false, but that's more typing
+          t.value='';         // with more chance of typos
+          t.style.color='#fff';
+          }
+      }
+    </script>
+
+  </body>
+</html>
